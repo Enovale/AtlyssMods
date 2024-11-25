@@ -13,6 +13,9 @@ namespace AtlyssDedicatedServer
         [HarmonyPrefix]
         public static void AtlyssNetworkManager_Awake()
         {
+            if (Plugin.ConfigShouldUseSteamworks.Value)
+                return;
+            
             var telepathy = Object.FindObjectsOfType<AtlyssNetworkManager>(true)
                 .First(o => o.gameObject.GetComponent<TelepathyTransport>() != null);
             telepathy.gameObject.SetActive(true);
@@ -45,7 +48,7 @@ namespace AtlyssDedicatedServer
         {
             if (Application.isBatchMode)
             {
-                SettingsManager._current._dataPath = Application.persistentDataPath;
+                ProfileDataManager._current._dataPath = Application.persistentDataPath;
             }
         }
 

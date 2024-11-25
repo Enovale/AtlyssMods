@@ -1,9 +1,8 @@
-﻿using System;
-using BepInEx;
+﻿using BepInEx;
+using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace AtlyssDedicatedServer;
 
@@ -11,11 +10,16 @@ namespace AtlyssDedicatedServer;
 public class Plugin : BaseUnityPlugin
 {
     internal static new ManualLogSource Logger;
+    
+    public static ConfigEntry<bool> ConfigShouldUseSteamworks;
 
     private void Awake()
     {
         // Plugin startup logic
         Logger = base.Logger;
+
+        ConfigShouldUseSteamworks = Config.Bind("General", "ShouldUseSteamworks", false,
+            "Whether or not to make a steam lobby for vanilla players or a port forwarded telepathy server.");
         Harmony.CreateAndPatchAll(typeof(Patches));
         Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
     }
