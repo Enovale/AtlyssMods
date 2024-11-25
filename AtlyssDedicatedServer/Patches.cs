@@ -48,7 +48,7 @@ namespace AtlyssDedicatedServer
         {
             if (Application.isBatchMode)
             {
-                ProfileDataManager._current._dataPath = Application.persistentDataPath;
+                ProfileDataManager._current._dataPath = Application.dataPath + "/server_profileCollections/";
             }
         }
 
@@ -58,7 +58,7 @@ namespace AtlyssDedicatedServer
         {
             if (Application.isBatchMode)
             {
-                SettingsManager._current._dataPath = Application.persistentDataPath + "/profileCollections/";
+                SettingsManager._current._dataPath = Application.dataPath + "/server_profileCollections/";
             }
         }
     }
