@@ -2,6 +2,17 @@
 
 This is a mod for ATLYSS that aims to allow for a dedicated server to be run, requiring no graphics and providing a console to the hoster.
 
+# Instructions
+
+1. Install the mod
+
+2. Server side, run the game through the command line with `-batchmode -nographics` arguments.
+The mod will automatically run itself as a server running on port 7777.
+Don't forget to port forward and everything!
+
+3. Client Side, go to Multiplayer, press Join, select the character slot you want to play with,
+then press F5 and enter the server IP and password.
+
 # Caveats
 
 - Currently the server is hosted without Steam, and thus all players must have the mod installed to be able to play.

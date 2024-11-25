@@ -15,4 +15,6 @@
              Note the default value $(ATLYSS_INSTALL)\BepInEx\plugins requires the ATLYSS_INSTALL property to be set. -->
         <MOD_DEPLOYPATH>$(ATLYSS_INSTALL)\BepInEx\plugins</MOD_DEPLOYPATH>
     </PropertyGroup>
+    
+    <Import Project="Global.props" />
 </Project>

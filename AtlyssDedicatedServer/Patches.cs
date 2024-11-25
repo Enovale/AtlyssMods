@@ -45,9 +45,7 @@ namespace AtlyssDedicatedServer
         {
             if (Application.isBatchMode)
             {
-                var field = typeof(ProfileDataManager).GetField("_dataPath",
-                    BindingFlags.NonPublic | BindingFlags.Instance);
-                field.SetValue(__instance, Application.persistentDataPath);
+                SettingsManager._current._dataPath = Application.persistentDataPath;
             }
         }
 
@@ -57,9 +55,7 @@ namespace AtlyssDedicatedServer
         {
             if (Application.isBatchMode)
             {
-                var field = typeof(SettingsManager).GetField("_dataPath",
-                    BindingFlags.NonPublic | BindingFlags.Instance);
-                field.SetValue(__instance, Application.persistentDataPath + "/profileCollections/");
+                SettingsManager._current._dataPath = Application.persistentDataPath + "/profileCollections/";
             }
         }
     }
