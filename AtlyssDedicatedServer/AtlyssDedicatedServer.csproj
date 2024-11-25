@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <AssemblyName>AtlyssDedicatedServer</AssemblyName>
+        <Product>My first plugin</Product>
+        <Version>1.0.0</Version>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>latest</LangVersion>
+        <RestoreAdditionalProjectSources>
+            https://api.nuget.org/v3/index.json;
+            https://nuget.bepinex.dev/v3/index.json;
+            https://nuget.samboy.dev/v3/index.json
+        </RestoreAdditionalProjectSources>
+        <RootNamespace>AtlyssDedicatedServer</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all"/>
+        <PackageReference Include="BepInEx.Core" Version="5.*"/>
+        <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*"/>
+        <PackageReference Include="UnityEngine.Modules" Version="2021.3.16" IncludeAssets="compile"/>
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Assembly-CSharp">
+        <HintPath>$(ATLYSS_MANAGED)\Assembly-CSharp.dll</HintPath>
+      </Reference>
+      <Reference Include="FizzySteamworks">
+        <HintPath>$(ATLYSS_MANAGED)\FizzySteamworks.dll</HintPath>
+      </Reference>
+      <Reference Include="Mirror">
+        <HintPath>$(ATLYSS_MANAGED)\Mirror.dll</HintPath>
+      </Reference>
+      <Reference Include="Mirror.Components">
+        <HintPath>$(ATLYSS_MANAGED)\Mirror.Components.dll</HintPath>
+      </Reference>
+      <Reference Include="Mirror.Transports">
+        <HintPath>$(ATLYSS_MANAGED)\Mirror.Transports.dll</HintPath>
+      </Reference>
+      <Reference Include="Telepathy">
+        <HintPath>$(ATLYSS_MANAGED)\Telepathy.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <Import Project="../Environment.props" />
+</Project>
