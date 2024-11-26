@@ -20,22 +20,25 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Reference Include="FizzySteamworks">
-        <HintPath>$(ATLYSS_MANAGED)\FizzySteamworks.dll</HintPath>
-      </Reference>
-      <Reference Include="Mirror">
-        <HintPath>$(ATLYSS_MANAGED)\Mirror.dll</HintPath>
-      </Reference>
-      <Reference Include="Mirror.Components">
-        <HintPath>$(ATLYSS_MANAGED)\Mirror.Components.dll</HintPath>
-      </Reference>
-      <Reference Include="Mirror.Transports">
-        <HintPath>$(ATLYSS_MANAGED)\Mirror.Transports.dll</HintPath>
-      </Reference>
-      <Reference Include="Telepathy">
-        <HintPath>$(ATLYSS_MANAGED)\Telepathy.dll</HintPath>
-      </Reference>
+        <Reference Include="FizzySteamworks">
+            <HintPath>$(ATLYSS_MANAGED)\FizzySteamworks.dll</HintPath>
+        </Reference>
+        <Reference Include="Mirror">
+            <HintPath>$(ATLYSS_MANAGED)\Mirror.dll</HintPath>
+        </Reference>
+        <Reference Include="Mirror.Components">
+            <HintPath>$(ATLYSS_MANAGED)\Mirror.Components.dll</HintPath>
+        </Reference>
+        <Reference Include="Mirror.Transports">
+            <HintPath>$(ATLYSS_MANAGED)\Mirror.Transports.dll</HintPath>
+        </Reference>
+        <Reference Include="Telepathy">
+            <HintPath>$(ATLYSS_MANAGED)\Telepathy.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UI">
+            <HintPath>$(ATLYSS_MANAGED)\UnityEngine.UI.dll</HintPath>
+        </Reference>
     </ItemGroup>
 
-    <Import Project="../Environment.props" />
+    <Import Project="../Environment.props"/>
 </Project>

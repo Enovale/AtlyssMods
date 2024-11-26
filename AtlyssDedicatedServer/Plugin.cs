@@ -2,6 +2,7 @@
 using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
+using Mirror;
 using UnityEngine;
 
 namespace AtlyssDedicatedServer;
@@ -12,6 +13,7 @@ public class Plugin : BaseUnityPlugin
     internal static new ManualLogSource Logger;
     
     public static ConfigEntry<bool> ConfigShouldUseSteamworks;
+    public static ConfigEntry<int> ConfigTickRate;
 
     private void Awake()
     {
@@ -20,6 +22,7 @@ public class Plugin : BaseUnityPlugin
 
         ConfigShouldUseSteamworks = Config.Bind("General", "ShouldUseSteamworks", false,
             "Whether or not to make a steam lobby for vanilla players or a port forwarded telepathy server.");
+        ConfigTickRate = Config.Bind("General", "TickRate", 70, "The tick rate of the server.");
         Harmony.CreateAndPatchAll(typeof(Patches));
         Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
     }
