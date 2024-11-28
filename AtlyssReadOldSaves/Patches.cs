@@ -24,7 +24,6 @@ namespace AtlyssReadOldSaves
                 var oldFormat = (OldCharacterFile) formatter.Deserialize(serializationStream);
                 ____characterFiles[__0] = oldFormat.ToNewFile();
                 serializationStream.Close();
-                __instance.Delete_ProfileData();
                 
                 if (!File.Exists(____dataPath + $"/atl_characterProfile_{__0}"))
                     File.CreateText(____dataPath + $"/atl_characterProfile_{__0}");
