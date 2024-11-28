@@ -14,6 +14,7 @@ public class Plugin : BaseUnityPlugin
     
     public static ConfigEntry<bool> ConfigShouldUseSteamworks;
     public static ConfigEntry<int> ConfigTickRate;
+    public static ConfigEntry<bool> ConfigServerOnlyMode;
 
     private void Awake()
     {
@@ -23,6 +24,8 @@ public class Plugin : BaseUnityPlugin
         ConfigShouldUseSteamworks = Config.Bind("General", "ShouldUseSteamworks", false,
             "Whether or not to make a steam lobby for vanilla players or a port forwarded telepathy server.");
         ConfigTickRate = Config.Bind("General", "TickRate", 70, "The tick rate of the server.");
+        ConfigServerOnlyMode = Config.Bind("General", "ServerOnlyMode", false,
+            "Enables ServerOnly mode which doesn't require a host character.");
         Harmony.CreateAndPatchAll(typeof(Patches));
         Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
     }

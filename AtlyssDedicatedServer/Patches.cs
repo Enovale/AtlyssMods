@@ -39,9 +39,16 @@ namespace AtlyssDedicatedServer
         {
             if (Application.isBatchMode)
             {
-                MainMenuManager._current.Set_HostMode((int)NetworkInitCondition.Host_Multiplayer);
-                ProfileDataManager._current.Set_FileIndex(0);
-                MainMenuManager._current._characterSelectManager.Select_CharacterFile();
+                if (Plugin.ConfigServerOnlyMode.Value)
+                {
+                    MainMenuManager._current.Init_MultiplayerServer();
+                }
+                else
+                {
+                    MainMenuManager._current.Set_HostMode((int)NetworkInitCondition.Host_Multiplayer);
+                    ProfileDataManager._current.Set_FileIndex(0);
+                    MainMenuManager._current._characterSelectManager.Select_CharacterFile();
+                }
             }
         }
 
